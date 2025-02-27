@@ -18,8 +18,8 @@ public class Main {
          *  For a problem to be solvable:
          *    count(0,prob) % 2 == count(0,sol) %2
          */
-        int [] prob = new int []{1 ,0, 1, 1, 0};
-        int [] sol = new int[]{1, 1, 0, 1, 0};
+        int [] prob = new int []{0, 0, 1, 1, 1};
+        int [] sol  = new int []{1, 0, 1, 1, 0};
 
         ProbIA5Board board = new ProbIA5Board(prob, sol );
 
@@ -30,19 +30,19 @@ public class Main {
                                 new ProbIA5HeuristicFunction());
 
         // Instantiate the search algorithm
-	// AStarSearch(new GraphSearch()) or IterativeDeepeningAStarSearch()
+	    // AStarSearch(new GraphSearch()) or IterativeDeepeningAStarSearch()
         Search alg = new AStarSearch(new GraphSearch());
 
         // Instantiate the SearchAgent object
         SearchAgent agent = new SearchAgent(p, alg);
 
-	// We print the results of the search
+	    // We print the results of the search
         System.out.println();
         printActions((List<?>) agent.getActions());
         printInstrumentation(agent.getInstrumentation());
-
+                
         // You can access also to the goal state using the
-	// method getGoalState of class Search
+	    // method getGoalState of class Search
 
     }
 

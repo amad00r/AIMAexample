@@ -60,7 +60,9 @@ public class ProbIA5Board {
         return new ProbIA5Board(board, solution);
     }
 
+    public int getSize() {
+        return board.length;
+    }
 
-    /* ^^^^^ TO COMPLETE ^^^^^ */
 
 }
