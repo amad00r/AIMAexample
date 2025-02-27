@@ -40,8 +40,11 @@ public class ProbIA5Board {
 
     /* Heuristic function */
     public double heuristic(){
-        // compute the number of coins out of place respect to solution
-        return 0;
+
+        double distance = 0.0;
+        for (int i = 0; i < board.length; ++i) distance += board[i] != solution[i] ? 1 : 0;
+
+        return distance;
     }
 
      /* Goal test */
@@ -52,6 +55,11 @@ public class ProbIA5Board {
      /* auxiliary functions */
 
      // Some functions will be needed for creating a copy of the state
+
+    public ProbIA5Board copy() {
+        return new ProbIA5Board(board, solution);
+    }
+
 
     /* ^^^^^ TO COMPLETE ^^^^^ */
 
