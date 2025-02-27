@@ -38,7 +38,7 @@ public class Main {
 
 	// We print the results of the search
         System.out.println();
-        printActions(agent.getActions());
+        printActions((List<?>) agent.getActions());
         printInstrumentation(agent.getInstrumentation());
 
         // You can access also to the goal state using the
@@ -47,7 +47,7 @@ public class Main {
     }
 
         private static void printInstrumentation(Properties properties) {
-        Iterator keys = properties.keySet().iterator();
+        Iterator<Object> keys = properties.keySet().iterator();
         while (keys.hasNext()) {
             String key = (String) keys.next();
             String property = properties.getProperty(key);
@@ -56,7 +56,7 @@ public class Main {
         
     }
     
-    private static void printActions(List actions) {
+    private static void printActions(List<?> actions) {
         for (int i = 0; i < actions.size(); i++) {
             String action = (String) actions.get(i);
             System.out.println(action);
