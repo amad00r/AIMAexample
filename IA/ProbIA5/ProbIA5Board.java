@@ -1,5 +1,9 @@
 package IA.ProbIA5;
 
+import java.util.Arrays;
+
+import static java.lang.Math.abs;
+
 /**
  * Created by bejar on 17/01/17.
  */
@@ -30,7 +34,8 @@ public class ProbIA5Board {
 
     /* vvvvv TO COMPLETE vvvvv */
     public void flip_it(int i){
-        // flip the coins i and i + 1
+        board[i] = abs(board[i] - 1);
+        board[(i + 1)%5] = abs(board[(i + 1)%5] - 1);
     }
 
     /* Heuristic function */
@@ -41,8 +46,7 @@ public class ProbIA5Board {
 
      /* Goal test */
      public boolean is_goal(){
-         // compute if board = solution
-         return false;
+         return Arrays.equals(board, solution);
      }
 
      /* auxiliary functions */
